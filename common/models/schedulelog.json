@@ -1,0 +1,29 @@
+{
+  "name": "schedulelog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "searchitem": {
+      "type": "string",
+      "required": true
+    },
+    "scheduledtime": {
+      "type": "date"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "logdate": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

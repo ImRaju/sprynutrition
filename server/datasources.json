@@ -1,0 +1,51 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDS": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "sprynutrition-v2",
+    "name": "mongoDS",
+    "connector": "mongodb"
+  },
+  "transient": {
+    "name": "transient",
+    "connector": "transient"
+  },
+  "apiDS": {
+    "name": "apiDS",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://api.nutritionix.com/v1_1/{path}",
+          "query": {
+            "brand_id": "{brand_id}",
+            "results": "{results}",
+            "cal_min": "{cal_min}",
+            "cal_max": "{cal_max}",
+            "fields": "{fields}",
+            "upc": "{upc}",
+            "query": "{query}",
+            "auto": "{auto}",
+            "type": "{type}",
+            "min_score": "{min_score}",
+            "offset": "{offset}",
+            "limit": "{limit}",
+            "appId": "8821f206",
+            "appKey": "f76f574d16015c831b348b531efa630a"
+          }
+        },
+        "functions": {
+          "search":["path","fields","results"],
+          "item": ["path","upc"],
+          "brand": ["path"],
+          "brandSearch": ["path","query","auto","type","min_score","offset","limit"]
+        }
+      }
+    ]
+  }
+}

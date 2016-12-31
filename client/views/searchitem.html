@@ -1,0 +1,49 @@
+<h1 align="center">Spry Nutrition</h1>
+</br>
+<div class="row search">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form role="form" ng-submit="search(Searchitem)">
+      <div class="input-group">
+        <input type="text" class="form-control input-sm" ng-model="Searchitem" placeholder="Search Food Database">
+        <span class="input-group-btn">
+          <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+</br>
+
+<div class="accordion__container">
+<div ng-if="items">Search Results for "{{item}}"</div>
+  <div class="accordion__tab" ng-repeat="item in items">
+    <div class="accordion__tab-title" ng-click="openTab(item)">
+    	<b>{{item.fields.item_name}}</b><br>
+    	<span class="label label-primary">Brand</span><span id="lebal"> {{item.fields.brand_name}}</span>
+    	<span class="label label-primary">Serving Size</span> <span id="lebal">{{item.fields.nf_serving_size_qty}}{{item.fields.nf_serving_size_unit}}</span>
+    	<!-- <span class="badge">12</span> -->
+    </div>
+    <div class="accordion__tab-content" ng-show="isOpenTab(item)" style="width:100%">
+    	<div style="display:inline-block;width:30%">
+		  	<div ><b>Calories</b><span> {{item.fields.nf_calories}}</span></div>
+		  	<div><b>Calories from Fat</b><span> {{item.fields.nf_calories_from_fat}}</span></div>
+		  	<div><b>Total Carbohydrates</b><span> {{item.fields.nf_total_carbohydrate}}g</span></div>
+		  	<div><b>Dietary Fiber</b><span> {{item.fields.nf_dietary_fiber}}g</span></div>
+		  	<div><b>Sugars</b><span> {{item.fields.nf_sugars}}g</span></div>
+    	</div>
+    	<div style="display:inline-block ;width:30%">
+		  	<div><b>Total Fat</b><span> {{item.fields.nf_total_fat}}g</span></div>
+		  	<div><b>Saturated Fat</b><span> {{item.fields.nf_saturated_fat}}g</span></div>
+		  	<div><b>Cholesterol</b><span> {{item.fields.nf_cholesterol}}mg</span></div>
+		  	<div><b>Sodium</b><span> {{item.fields.nf_sodium}}mg</span></div>
+		  	<div><b>Protein</b><span> {{item.fields.nf_protein}}g</span></div>
+    	</div>
+    	<div style="display:inline-block;width:30%">
+		  	<div ><b>Vitamin A</b><span> {{item.fields.nf_vitamin_a_dv}}%</span></div>
+		  	<div><b>Vitamin C</b><span> {{item.fields.nf_vitamin_c_dv}}%</span></div>
+		  	<div ><b>Calcium</b><span> {{item.fields.nf_calcium_dv}}%</span></div>
+		  	<div><b>Iron</b><span> {{item.fields.nf_iron_dv}}%</span></div>
+    	</div>
+    </div>
+  </div>
+</div>

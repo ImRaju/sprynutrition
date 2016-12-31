@@ -1,0 +1,37 @@
+{
+  "name": "searchitem",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": false,
+    "Status": false
+  },
+  "properties": {
+    "searchitem": {
+      "type": "string",
+      "required": true
+    },
+    "response": {
+      "type": "array",
+      "required": "true"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "apilogs": {
+      "type": "hasMany",
+      "model": "apilog",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

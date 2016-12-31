@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDS"
+  },
+  "AccessToken": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "apilog": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "schedule": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "schedulelog": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "searchitem": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "userdetails": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "udevice": {
+    "dataSource": "transient",
+    "public": false
+  }
+}

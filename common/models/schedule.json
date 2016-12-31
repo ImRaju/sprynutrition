@@ -1,0 +1,37 @@
+{
+  "name": "schedule",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    }
+  },
+  "properties": {
+    "searchitem": {
+      "type": "string",
+      "required": true
+    },
+    "scheduledate": {
+      "type": "date",
+      "required": true
+    },
+    "status":{
+      "type": "string",
+      "required": "false"
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

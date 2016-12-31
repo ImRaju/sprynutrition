@@ -1,0 +1,39 @@
+{
+  "name": "userdetails",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "dob": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "imageurl": {
+      "type": "string"
+    },
+    "created": "date",
+    "updated": "date"
+  },
+  "validations": [],
+  "relations": {
+    "device": {
+      "type": "embedsMany",
+      "model": "udevice",
+      "property": "devices"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

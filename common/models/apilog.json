@@ -1,0 +1,27 @@
+{
+  "name": "apilog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "searchitem": {
+      "type": "string",
+      "required": true
+    },
+    "logdate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "searchitem": {
+      "type": "belongsTo",
+      "model": "searchitem",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
